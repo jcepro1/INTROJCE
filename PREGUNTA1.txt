@@ -1,0 +1,27 @@
+//ejercicio 1 : s= 3*1 + 6*4 + 12*9  + 24* 16 + 48 * 25=1,719 
+function ejercicio1(n: Integer): Integer;
+var
+  s1, s2, t, sum: Integer;
+
+begin
+  s1 := 3;
+  s2 := 1;
+  sum:= 0;
+  c := 1;
+  while (n >= c) do
+  begin
+    c := c + 1;
+    t:= s1 * s2;
+    sum:= sum+ t
+    s1 := s1 * 2;
+    s2 := c * c;
+
+  end;
+
+  Result := sum;
+
+end;
+
+
+//llamada
+ Edit2.Text := IntToStrejercicio1(n));
