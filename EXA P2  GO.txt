@@ -1,0 +1,44 @@
+//PREGUNAT 2
+function ejercicio2(n: Integer): string;
+var
+  d, sumap, sumai, cp, ci, c: Integer;
+  pp, pi: real;
+
+begin
+
+  c := 0;
+  cp := 0;
+  ci := 0;
+  d := 0;
+  sumap := 0;
+  sumai := 0;
+
+  while n > 0 do
+  begin
+    d := n mod 10;
+    n := n div 10;
+
+    if (d mod 2 = 0) then
+    begin
+      sumap := sumap + d;
+      cp := cp + 1;
+    end
+    else
+    begin
+      sumai := sumai + d;
+      ci := ci + 1;
+    end;
+    c := c + 1;
+
+  end;
+
+  pp := sumap / cp;
+  pi := sumai / ci;
+
+  Result := 'prom pares es: ' + FloatToStr(pp) + ' prom impares es:' +
+    FloatToStr(pi);
+
+end;
+
+//LLAMADA
+Edit2.Text := (ejercicio2(StrToInt(Edit1.Text)))
