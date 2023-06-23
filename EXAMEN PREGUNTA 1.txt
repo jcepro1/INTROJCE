@@ -1,0 +1,47 @@
+//PREGUNAT 1
+function sfactorial(n: Integer): real;
+var
+  fac, sfac: real;
+
+begin
+  fac := 1;
+  sfac := 0;
+
+  for c := 1 to n do
+  begin
+    fac := fac * c;
+
+  end;
+  Result := fac;
+
+end;
+
+function ejercicio1(n: Integer): real;
+var
+  d, t, s: real;
+  f, a, b: Integer;
+begin
+  a := -1;
+  b := 1;
+  s := 0;
+  c := 1;
+  while (n >= c) do
+  begin
+
+    d := c * c;
+    f := a + b;
+    a := b;
+    b := f;
+
+    t := d / sfactorial(f);
+    s := s + t;
+    c := c + 1;
+  end;
+
+  Result := s;
+
+end;
+
+
+//LLAMADA
+Edit2.Text := FloatToStr(ejercicio1(n))
