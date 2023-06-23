@@ -1,0 +1,43 @@
+//// PREGUNTA 1
+function pregunta2(n: Integer): string;
+var
+  d,nn1, nn2, cont1, cont2  : Integer;
+   PromPar, PromImpar: Real;
+  r: string;
+begin
+  nn1 := 0;
+  nn2 := 0;
+  cont1 := 0;
+  cont2 := 0;
+  PromPar := 0;
+  PromImpar := 0;
+  d := 0;
+  r := '';
+  while (n > 0) do
+  begin
+    d := n mod 10;
+    n := n div 10;
+
+    if(n mod 2 = 0) then
+    Begin
+       nn1 := nn1  + d;
+       cont1 := cont1 +1;
+    End else
+    Begin
+       nn2 := nn2  + d;
+       cont2 := cont2 +1;
+    End;
+  end;
+
+  PromImpar := nn1 / cont1;
+  PromPar := nn2 / cont2;
+
+  r := 'PromPar: ' + FloatToStr(PromPar) + '  PromImpar: ' +
+    FloatToStr(PromImpar);
+  Result := r;
+
+end;
+//LLAMADA
+
+
+     Edit2.text := (pregunta2(n));
